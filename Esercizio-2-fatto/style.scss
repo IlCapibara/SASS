@@ -1,0 +1,48 @@
+/*Dichiarazione Variabili*/
+$rosso: red;
+$verde: green;
+$blu: blue;
+
+
+
+body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    div{
+        border: 1px solid $rosso;
+        h1{
+            color: $verde;
+            text-decoration: underline $blu;
+            display: block;
+            text-align: center;
+        }
+        section{
+            display: flex;
+            flex-direction: row;
+            margin: 10px;
+            article{
+                border: 1px solid $verde;
+                padding: 1rem;
+            }
+        }
+    }
+}
+@mixin sezione($f-color: red, $b-color: green, $f-size: 1rem) {
+    color: $f-color;
+    border: 1px solid $b-color;
+    font-size: $f-size;
+}
+/*Non so per quale motivo se le nidifico non funzionano*/
+.blu{
+    @include sezione($blu, -color, -size);
+}
+.rosso{
+    @include sezione(-color, -color, -size);
+}
+.verde{
+    @include sezione($verde, $blu, 24px);
+    width: 100%;
+    text-align: center;
+}
