@@ -34,7 +34,7 @@ body{
     border: 1px solid $b-color;
     font-size: $f-size;
 }
-/*Non so per quale motivo se le nidifico non funzionano*/
+/*Non so per quale motivo se le nidifico non funzionano :( */
 .blu{
     @include sezione($blu, -color, -size);
 }
