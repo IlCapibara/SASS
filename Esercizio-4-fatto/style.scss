@@ -1,0 +1,55 @@
+@use 'variables';
+@use 'function';
+
+%accas{
+    color: variables.$verde;
+    text-decoration: underline variables.$blu;
+    display: block;
+    text-align: center;
+}
+
+body{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  div{
+      border: function.reminator(1rem) solid variables.$rosso;
+      h1{
+          @extend %accas;
+      }
+      h2{
+        @extend %accas; 
+        padding: 1rem;
+        border: function.reminator(1rem) solid variables.$rosso;
+        width: function.reminator(500rem);
+        margin: 0 auto 0 auto;
+      }
+      section{
+          display: flex;
+          flex-direction: row;
+          margin: function.reminator(10rem);
+          article{
+              border: function.reminator(1rem) solid variables.$verde;
+              padding: 1rem;
+          }
+      }
+  }
+}
+@mixin sezione($f-color: red, $b-color: green, $f-size: 1rem) {
+  color: $f-color;
+  border: function.reminator(1rem) solid $b-color;
+  font-size: $f-size;
+}
+/*Non so per quale motivo se le nidifico non funzionano :( */
+.blu{
+  @include sezione(variables.$blu, -color, -size);
+}
+.rosso{
+  @include sezione(variables.$rosso, -color, -size);
+}
+.verde{
+  @include sezione(variables.$verde, variables.$blu, function.reminator(24rem));
+  width: 100%;
+  text-align: center;
+}
